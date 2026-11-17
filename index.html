@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rampuram Digital Village Portal</title>
+<meta name="description" content="Official digital portal of Rampuram Gram Panchayat: announcements, development projects, services, gallery and leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--green:#1f5d3a;--gold:#c9a24b;--bg:#f6f8f7;--card:#fff;--tx:#14213a;--mu:#5b6b7f;--bd:#e0e6e3;--glass:rgba(255,255,255,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1424;--card:#111e33;--tx:#e8eef6;--mu:#9fb0c4;--bd:#22324b}}
+:root[data-theme="dark"]{--bg:#0a1424;--card:#111e33;--tx:#e8eef6;--mu:#9fb0c4;--bd:#22324b}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.2;margin:0 0 .5em}
+a{color:inherit}
+.wrap{max-width:1140px;margin:auto;padding:0 20px}
+section.pg{padding:56px 0}
+h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+.sub{color:var(--mu);max-width:62ch;margin:0 0 28px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--navy) 92%,transparent);backdrop-filter:blur(12px);color:#fff}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:19}
+nav{display:flex;align-items:center;gap:6px;height:60px}
+.brand{font:700 1.1rem Sora;text-decoration:none;margin-right:auto;display:flex;gap:8px;align-items:center}
+.brand i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--gold));display:inline-block}
+nav a.l{color:#cfd9e8;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:.9rem}
+nav a.l:hover,nav a.on{background:var(--glass);color:#fff}
+.menu{display:none}
+button,.btn{font:600 .92rem Inter;border:0;border-radius:10px;padding:10px 16px;cursor:pointer;background:var(--green);color:#fff;text-decoration:none;display:inline-block}
+button.gold,.btn.gold{background:var(--gold);color:#1b1405}
+button.ghost{background:transparent;border:1px solid var(--bd);color:var(--tx)}
+button.sm{padding:5px 10px;font-size:.8rem}
+button.danger{background:#b3261e}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(max-width:900px){.menu{display:block;margin-left:6px}nav .links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:10px 20px 16px}nav .links.open{display:flex}}
+.links{display:flex;gap:2px;align-items:center}
+.hero{min-height:calc(100vh - 60px);position:relative;color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.hero svg.bg{position:absolute;inset:0;width:100%;height:100%}
+.hero .in{position:relative;padding:80px 20px 48px;max-width:1140px;margin:auto;width:100%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,31,58,.15),rgba(11,31,58,.78))}
+.hero .in{z-index:2}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);max-width:14ch;margin-bottom:14px}
+.hero p{max-width:56ch;font-size:1.1rem;color:#e6edf6}
+.clock{display:inline-block;background:var(--glass);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:12px;margin-bottom:18px;font-size:.9rem}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:32px}
+.stat{background:var(--glass);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:16px}
+.stat b{font:700 1.8rem Sora;display:block;color:var(--gold)}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px}
+.card.h{padding:0;overflow:hidden}
+.card .b{padding:16px 18px 18px}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--green) 16%,transparent);color:var(--green)}
+:root[data-theme="dark"] .tag{color:#7fd6a2}
+.tag.Alert,.tag.Pending{background:#b3261e22;color:#c0392b}.tag.Completed,.tag.Resolved{background:#1f5d3a22}.tag.Upcoming{background:#c9a24b33;color:#8a6a14}
+.bar{height:8px;border-radius:9px;background:var(--bd);overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:9px}
+.muted{color:var(--mu);font-size:.88rem}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.chip{padding:7px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--card);cursor:pointer;font-size:.85rem;color:var(--tx)}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.two{display:grid;gap:28px;grid-template-columns:1fr 1fr}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.alertbar{background:#b3261e;color:#fff;text-align:center;padding:8px 16px;font-size:.9rem}
+label{display:block;font-weight:600;font-size:.85rem;margin:12px 0 4px}
+input,select,textarea{width:100%;font:inherit;padding:10px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
+.err{color:#c0392b;font-size:.8rem;min-height:1em}
+.av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--green));color:#fff;display:grid;place-items:center;font:700 1.3rem Sora;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--bd);vertical-align:top}
+.scroll{overflow-x:auto}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.thumb{aspect-ratio:4/3;display:block;width:100%;object-fit:cover;cursor:pointer}
+.lb{position:fixed;inset:0;background:rgba(5,10,20,.88);display:grid;place-items:center;z-index:50;padding:20px}
+.lb>div{max-width:760px;width:100%;color:#fff}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:12px;z-index:60;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+footer{background:var(--navy);color:#b9c6d8;padding:40px 0 28px;margin-top:40px;font-size:.9rem}
+footer a{color:#e6edf6}
+.kpi b{font:700 2rem Sora;display:block}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="alert"></div>
+<header><div class="wrap"><nav>
+<a class="brand" href="#home"><i></i>Rampuram</a>
+<div class="links" id="links"></div>
+<button class="ghost sm" id="theme" aria-label="Toggle light or dark mode" style="color:#fff;border-color:#ffffff44">Theme</button>
+<button class="ghost sm menu" id="menu" aria-label="Open menu" style="color:#fff;border-color:#ffffff44">Menu</button>
+</nav></div></header>
+<main id="app"></main>
+<footer><div class="wrap two"><div><h3 style="color:#fff">Rampuram Gram Panchayat</h3><p>Mandal Office Road, Rampuram, Telangana 505 001<br>Phone: 08712 255 100 · Email: <a href="mailto:gp.rampuram@example.in">gp.rampuram@example.in</a></p></div><div><p>Office hours: Mon to Sat, 10:00 am to 5:00 pm<br>Emergency: 112 (all services) · 108 (ambulance)</p><p><a href="#admin">Admin sign in</a> · <a href="#services">File a complaint</a></p></div></div></footer>
+<div id="modal"></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='dv_data_v1';let D,SESS=null;
+const today=()=>new Date().toISOString().slice(0,10);
+function seed(){return{
+ content:{name:'Rampuram',welcome:'Welcome to Rampuram',intro:'A river-side village of farmers, weavers and teachers, where a 400-year-old temple tank sits beside a solar-powered school. This portal brings notices, services and village progress into one place.',alert:'Heavy rain expected Thursday. Avoid the Peddavagu causeway.'},
+ stats:{Population:4820,Households:1126,Schools:4,Temples:7,Wards:10},
+ ann:[{id:1,title:'Gram Sabha on 28 November',type:'Meeting',date:'2026-11-12',body:'All households are invited to the Gram Sabha at the Panchayat hall at 10:00 am. Agenda: 2027 budget and drinking water plan.'},{id:2,title:'Polio drops camp for children under 5',type:'Notice',date:'2026-11-10',body:'Camp at the Primary Health Sub-centre, 8:00 am to 4:00 pm.'},{id:3,title:'Karthika Deepotsavam at Sri Rama temple',type:'Festival',date:'2026-11-24',body:'Lamp lighting from 6:00 pm at the temple tank. Volunteers welcome.'},{id:4,title:'Causeway closed during heavy rain',type:'Alert',date:'2026-11-16',body:'Use the Kondapur bypass until water recedes.'},{id:5,title:'Kisan Mela: seed and soil testing',type:'Event',date:'2026-12-03',body:'Free soil testing at the community hall.'}],
+ proj:[{id:1,name:'CC road, Wards 3 to 6',cat:'Roads and drainage',status:'Ongoing',progress:68,desc:'1.8 km cement concrete road with side drains.'},{id:2,name:'Mission Bhagiratha pipeline',cat:'Drinking water',status:'Ongoing',progress:45,desc:'Household tap connections for 340 homes.'},{id:3,name:'Solar street lights',cat:'Street lights',status:'Completed',progress:100,desc:'96 LED solar lights installed across all wards.'},{id:4,name:'Village park and open gym',cat:'Parks',status:'Upcoming',progress:10,desc:'Park with walking track beside the tank.'},{id:5,name:'Segregation shed and compost yard',cat:'Sanitation',status:'Completed',progress:100,desc:'Wet and dry waste handled at village level.'},{id:6,name:'School compound wall',cat:'Public infrastructure',status:'Ongoing',progress:82,desc:'ZP High School boundary and gate.'}],
+ gallery:[{id:1,title:'Sunrise over the paddy fields',cat:'Nature',hue:140},{id:2,title:'Bathukamma celebrations',cat:'Festivals',hue:330},{id:3,title:'Sri Rama temple tank',cat:'Temples',hue:30},{id:4,title:'New CC road',cat:'Development',hue:210},{id:5,title:'Annual day at ZP school',cat:'School',hue:270},{id:6,title:'Folk art evening',cat:'Culture',hue:10},{id:7,title:'Peddavagu at monsoon',cat:'Nature',hue:190},{id:8,title:'Solar street lights',cat:'Development',hue:50}],
+ leaders:[{id:1,name:'Lakshmi Devi',role:'Sarpanch',phone:'98480 11001',group:'Sarpanch'},{id:2,name:'K. Narsimha Reddy',role:'Upa-Sarpanch',phone:'98480 11002',group:'Panchayat member'},{id:3,name:'B. Anjaiah',role:'Ward member, Ward 3',phone:'98480 11003',group:'Ward member'},{id:4,name:'S. Fatima',role:'Ward member, Ward 7',phone:'98480 11007',group:'Ward member'},{id:5,name:'M. Ravi Kumar',role:'Panchayat Secretary',phone:'98480 11010',group:'Secretariat'},{id:6,name:'P. Swapna',role:'Digital Assistant',phone:'98480 11011',group:'Secretariat'}],
+ schemes:[{id:1,title:'Rythu Bandhu',type:'Scheme',body:'Investment support for landholding farmers each season. Apply with pattadar passbook at the Agriculture Extension Officer.'},{id:2,title:'Aasara pensions',type:'Scheme',body:'Monthly pension for elderly, widows and persons with disabilities. Apply through the Panchayat Secretary.'},{id:3,title:'Birth, death and income certificates',type:'Certificate',body:'Birth and death: Panchayat office, 21 days. Income and caste: Mee Seva with Aadhaar and ration card.'},{id:4,title:'Property tax and water bills',type:'Service',body:'Pay at the Panchayat office or through the official state portal.'}],
+ complaints:[{id:1,name:'Ramesh',ward:'4',category:'Drainage',body:'Drain overflowing near the bus stop.',date:'2026-11-14',status:'Pending'}]}}
+function load(){try{D=JSON.parse(localStorage.getItem(KEY))}catch(e){}if(!D||!D.content)D=seed()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){toast('Storage is full. Remove large images.')}}
+try{SESS=JSON.parse(localStorage.getItem('dv_sess'))}catch(e){}
+load();
+const nid=a=>a.reduce((m,x)=>Math.max(m,x.id),0)+1;
+function toast(t){const e=document.createElement('div');e.className='toast';e.setAttribute('role','status');e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),2600)}
+function scene(h,t){return `<svg class="thumb" viewBox="0 0 400 300" role="img" aria-label="${esc(t)}" data-act="open" data-t="${esc(t)}"><defs><linearGradient id="s${h}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="hsl(${h},60%,30%)"/><stop offset="1" stop-color="hsl(${h},70%,78%)"/></linearGradient></defs><rect width="400" height="300" fill="url(#s${h})"/><circle cx="300" cy="90" r="30" fill="#f5d98a" opacity=".9"/><path d="M0 200 Q100 140 200 190 T400 170 V300 H0Z" fill="hsl(${(h+40)%360},35%,28%)"/><path d="M0 240 Q120 200 240 235 T400 225 V300 H0Z" fill="hsl(${(h+60)%360},40%,20%)"/></svg>`}
+const NAV=[['home','Home'],['about','About'],['development','Development'],['services','Services'],['news','News'],['gallery','Gallery'],['people','People'],['contact','Contact']];
+function page(){const p=(location.hash||'#home').slice(1);return NAV.some(n=>n[0]===p)||p==='admin'?p:'home'}
+const T={
+home(){const c=D.content,s=D.stats;return `<div class="hero"><svg class="bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="hs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16345c"/><stop offset=".55" stop-color="#e9b86a"/><stop offset="1" stop-color="#f6dca3"/></linearGradient></defs><rect width="1200" height="700" fill="url(#hs)"/><circle cx="880" cy="360" r="70" fill="#fff3c9"/><path d="M0 430 Q200 330 420 420 T820 400 T1200 380 V700 H0Z" fill="#3b6b4d"/><path d="M0 500 Q300 430 600 500 T1200 470 V700 H0Z" fill="#1f5d3a"/><path d="M0 580 Q300 530 700 585 T1200 560 V700 H0Z" fill="#12402a"/><path d="M180 470 h40 v-30 l20-18 20 18 v30 h40 v40 h-120z" fill="#0b1f3a" opacity=".7"/></svg>
+<div class="in"><div class="clock" id="clock"></div><h1>${esc(c.welcome)}</h1><p>${esc(c.intro)}</p><div class="row" style="margin-top:22px"><a class="btn gold" href="#services">Use village services</a><a class="btn" style="background:var(--glass)" href="#development">See development work</a></div>
+<div class="stats">${Object.keys(s).map(k=>`<div class="stat"><b data-n="${esc(s[k])}">0</b>${esc(k)}</div>`).join('')}</div></div></div>
+<section class="pg"><div class="wrap"><h2>Latest announcements</h2><p class="sub">Notices from the Panchayat, newest first.</p><div class="grid">${[...D.ann].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3).map(annCard).join('')}</div></div></section>
+<section class="pg" style="padding-top:0"><div class="wrap"><h2>Recent development projects</h2><div class="grid">${D.proj.slice(0,3).map(projCard).join('')}</div></div></section>
+<section class="pg" style="padding-top:0"><div class="wrap"><h2>Gallery preview</h2><div class="grid">${D.gallery.slice(0,4).map(gCard).join('')}</div><p><a class="btn" href="#gallery">Open full gallery</a></p></div></section>
+<section class="pg" style="padding-top:0"><div class="wrap"><h2>Quick links</h2><div class="row">${[['Grievance','#services'],['Notice board','#news'],['Leaders','#people'],['Find us','#contact'],['Telangana state portal','https://www.telangana.gov.in'],['Mee Seva','https://ts.meeseva.telangana.gov.in']].map(l=>`<a class="btn ghost" style="border:1px solid var(--bd);background:var(--card);color:var(--tx)" href="${l[1]}" ${l[1][0]!=='#'?'target="_blank" rel="noopener"':''}>${l[0]}</a>`).join('')}</div></div></section>`},
+about(){return `<section class="pg"><div class="wrap"><h2>About ${esc(D.content.name)}</h2><p class="sub">History, land and people.</p><div class="two"><div class="card"><h3>History</h3><p>Rampuram was settled around 1620 along the Peddavagu stream. The Sri Rama temple tank, dug by village weavers, still feeds 300 acres of paddy. The village joined the Gram Panchayat system in 1959.</p><h3>Culture and traditions</h3><p>Bathukamma, Bonalu and Karthika Deepotsavam are celebrated by every ward. Oggu Katha folk storytelling is performed each winter.</p></div><div class="card"><h3>Geography</h3><p>Elevation 312 m. Area 1,840 acres: 62% irrigated farmland, 18% forest and scrub, 20% habitation. Climate: hot summers, monsoon June to September.</p><h3>Population</h3><p>${D.stats.Population.toLocaleString('en-IN')} people in ${D.stats.Households.toLocaleString('en-IN')} households across ${D.stats.Wards} wards. Literacy rate 74%.</p></div><div class="card"><h3>Famous personalities</h3><p>Dr. Vasantha Rao, agricultural scientist. Late Sri Mallaiah, Oggu Katha maestro. Smt. Kamala Bai, freedom movement volunteer.</p></div><div class="card"><h3>Historical places</h3><p>Sri Rama temple and tank (17th century). Old stone gateway at the market. Weavers’ well, 1880.</p></div></div><div class="card" style="margin-top:18px"><h3>Village map</h3>${mapSvg()}</div></div></section>`},
+development(){const f=D.proj,st=k=>f.filter(p=>p.status===k).length,avg=Math.round(f.reduce((a,p)=>a+p.progress,0)/(f.length||1));return `<section class="pg"><div class="wrap"><h2>Development dashboard</h2><p class="sub">Every project, its status and progress.</p><div class="grid" style="margin-bottom:24px">${[['Completed',st('Completed')],['Ongoing',st('Ongoing')],['Upcoming',st('Upcoming')],['Average progress',avg+'%']].map(k=>`<div class="card kpi"><b>${k[1]}</b>${k[0]}</div>`).join('')}</div><div class="row" id="pf">${['All','Completed','Ongoing','Upcoming'].map(x=>`<button class="chip ${x==='All'?'on':''}" data-act="pf" data-v="${x}">${x}</button>`).join('')}</div><div class="grid" id="plist">${f.map(projCard).join('')}</div></div></section>`},
+services(){return `<section class="pg"><div class="wrap"><h2>Village services</h2><p class="sub">Schemes, certificates and how to reach officials.</p><div class="grid">${D.schemes.map(s=>`<div class="card"><span class="tag">${esc(s.type)}</span><h3 style="margin-top:10px">${esc(s.title)}</h3><p class="muted">${esc(s.body)}</p></div>`).join('')}</div>
+<div class="two" style="margin-top:32px"><div class="card"><h3>Register a grievance</h3><form id="cf" novalidate><label for="cn">Your name</label><input id="cn" autocomplete="name"><div class="err" id="e1"></div><label for="cw">Ward number</label><select id="cw">${Array.from({length:+D.stats.Wards||10},(_, i)=>`<option>${i+1}</option>`).join('')}</select><label for="cc">Category</label><select id="cc"><option>Water</option><option>Drainage</option><option>Roads</option><option>Street light</option><option>Sanitation</option><option>Other</option></select><label for="cb">Describe the problem</label><textarea id="cb" rows="4"></textarea><div class="err" id="e2"></div><p><button type="submit">Submit complaint</button></p></form></div>
+<div class="card"><h3>Emergency contacts</h3><table><tr><td>All emergencies</td><td>112</td></tr><tr><td>Ambulance</td><td>108</td></tr><tr><td>Police</td><td>100</td></tr><tr><td>Fire</td><td>101</td></tr><tr><td>Women helpline</td><td>181</td></tr><tr><td>Panchayat office</td><td>08712 255 100</td></tr></table><h3 style="margin-top:20px">Government links</h3><p><a href="https://www.telangana.gov.in" target="_blank" rel="noopener">Telangana Government</a><br><a href="https://www.india.gov.in" target="_blank" rel="noopener">National Portal of India</a></p></div></div></div></section>`},
+news(){const types=['All',...new Set(D.ann.map(a=>a.type))];return `<section class="pg"><div class="wrap"><h2>News and notice board</h2><p class="sub">Announcements, events, meetings and alerts with publish dates.</p><div class="row">${types.map(x=>`<button class="chip ${x==='All'?'on':''}" data-act="nf" data-v="${x}">${x}</button>`).join('')}</div><div class="grid" id="nlist">${[...D.ann].sort((a,b)=>b.date.localeCompare(a.date)).map(annCard).join('')}</div></div></section>`},
+gallery(){const cats=['All',...new Set(D.gallery.map(g=>g.cat))];return `<section class="pg"><div class="wrap"><h2>Village gallery</h2><p class="sub">Select a photo to enlarge it.</p><div class="row">${cats.map(x=>`<button class="chip ${x==='All'?'on':''}" data-act="gf" data-v="${x}">${x}</button>`).join('')}</div><div class="grid" id="glist">${D.gallery.map(gCard).join('')}</div><h3 style="margin-top:36px">Video gallery</h3><p class="muted">Videos are added by the Panchayat from the admin panel as links. None published yet.</p></div></section>`},
+people(){const g=['Sarpanch','Panchayat member','Ward member','Secretariat'];return `<section class="pg"><div class="wrap"><h2>People and leadership</h2><p class="sub">Elected representatives and Panchayat staff.</p>${g.map(k=>{const l=D.leaders.filter(x=>x.group===k);return l.length?`<h3 style="margin-top:24px">${k}${k==='Sarpanch'?'':'s'}</h3><div class="grid">${l.map(p=>`<div class="card"><div class="av">${esc(p.name.replace(/[^A-Za-z ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join(''))}</div><b>${esc(p.name)}</b><div class="muted">${esc(p.role)}</div><p><a href="tel:${esc(p.phone.replace(/\s/g,''))}">${esc(p.phone)}</a></p></div>`).join('')}</div>`:''}).join('')}</div></section>`},
+contact(){return `<section class="pg"><div class="wrap"><h2>Contact and location</h2><div class="two"><div class="card"><h3>Panchayat office</h3><p>Mandal Office Road, Rampuram, Telangana 505 001</p><p>Phone: 08712 255 100<br>Email: gp.rampuram@example.in</p><p>Emergency: 112 · Ambulance: 108</p><p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gram+Panchayat+Office+Telangana" target="_blank" rel="noopener">Open in Google Maps</a></p></div><div class="card">${mapSvg()}</div></div></div></section>`},
+admin(){return SESS?adminUI():`<section class="pg"><div class="wrap" style="max-width:420px"><div class="card"><h2>Admin sign in</h2><p class="muted">Demo accounts: admin / admin123 (full access), editor / editor123 (news and projects only). Replace with Supabase Auth in production.</p><form id="lf" novalidate><label for="lu">Username</label><input id="lu" autocomplete="username"><label for="lp">Password</label><input id="lp" type="password" autocomplete="current-password"><div class="err" id="le"></div><p><button type="submit">Sign in</button></p></form></div></div></section>`}
+};
+function mapSvg(){return `<svg viewBox="0 0 400 260" style="width:100%;border-radius:12px;background:color-mix(in srgb,var(--green) 12%,var(--card))" role="img" aria-label="Schematic village map"><path d="M0 190 Q100 150 200 185 T400 170" stroke="#4a90c2" stroke-width="14" fill="none"/><path d="M40 40 L360 220" stroke="#b9a77a" stroke-width="5"/><rect x="160" y="80" width="80" height="50" rx="8" fill="#0b1f3a"/><circle cx="90" cy="100" r="22" fill="#1f5d3a"/><circle cx="310" cy="80" r="16" fill="#c9a24b"/><text x="200" y="110" fill="#fff" font-size="12" text-anchor="middle">Panchayat</text><text x="90" y="140" font-size="11" text-anchor="middle" fill="currentColor">Temple tank</text><text x="310" y="108" font-size="11" text-anchor="middle" fill="currentColor">School</text><text x="200" y="240" font-size="11" text-anchor="middle" fill="currentColor">Peddavagu stream</text></svg>`}
+function annCard(a){return `<article class="card"><span class="tag ${esc(a.type)}">${esc(a.type)}</span> <span class="muted">${esc(a.date)}</span><h3 style="margin-top:8px">${esc(a.title)}</h3><p class="muted">${esc(a.body)}</p></article>`}
+function projCard(p){return `<article class="card" data-s="${esc(p.status)}"><span class="tag ${esc(p.status)}">${esc(p.status)}</span> <span class="muted">${esc(p.cat)}</span><h3 style="margin-top:8px">${esc(p.name)}</h3><p class="muted">${esc(p.desc)}</p><div class="bar" role="progressbar" aria-valuenow="${+p.progress}" aria-valuemin="0" aria-valuemax="100"><i style="width:${+p.progress}%"></i></div><div class="muted">${+p.progress}% complete</div></article>`}
+function gCard(g){return `<figure class="card h" style="margin:0" data-c="${esc(g.cat)}">${g.img?`<img class="thumb" src="${esc(g.img)}" alt="${esc(g.title)}" data-act="open" data-t="${esc(g.title)}" loading="lazy">`:scene(+g.hue||140,g.title)}<figcaption class="b"><b>${esc(g.title)}</b><div class="muted">${esc(g.cat)}</div></figcaption></figure>`}
+/* ADMIN */
+const SCHEMA={
+ ann:{label:'Announcements',cols:['title','type','date'],f:[['title','text',1],['type','select',['Notice','Event','Alert','Meeting','Festival']],['date','date',1],['body','textarea',1]],tpl:()=>({date:today(),type:'Notice'})},
+ proj:{label:'Projects',cols:['name','status','progress'],f:[['name','text',1],['cat','text',1],['status','select',['Completed','Ongoing','Upcoming']],['progress','number',1],['desc','textarea',1]],tpl:()=>({status:'Ongoing',progress:0})},
+ gallery:{label:'Gallery',cols:['title','cat'],f:[['title','text',1],['cat','text',1],['hue','number'],['img','file']],tpl:()=>({hue:140})},
+ leaders:{label:'Leaders',cols:['name','role','phone'],f:[['name','text',1],['role','text',1],['phone','text',1],['group','select',['Sarpanch','Panchayat member','Ward member','Secretariat']]],tpl:()=>({group:'Ward member'}),admin:1},
+ schemes:{label:'Services',cols:['title','type'],f:[['title','text',1],['type','select',['Scheme','Certificate','Service']],['body','textarea',1]],tpl:()=>({type:'Scheme'}),admin:1}};
+let TAB='dash',EDIT=null;
+function can(k){return SESS.role==='admin'||!(SCHEMA[k]&&SCHEMA[k].admin)&&!['stats','content'].includes(k)}
+function adminUI(){const tabs=[['dash','Dashboard'],...Object.keys(SCHEMA).map(k=>[k,SCHEMA[k].label]),['complaints','Complaints'],['stats','Statistics'],['content','Site content']].filter(t=>t[0]==='dash'||t[0]==='complaints'||can(t[0]));
+ return `<section class="pg"><div class="wrap"><div class="row"><h2 style="margin:0;margin-right:auto">Admin panel</h2><span class="muted">${esc(SESS.user)} (${SESS.role})</span><button class="ghost sm" data-act="reset">Reset sample data</button><button class="ghost sm" data-act="out">Sign out</button></div><div class="tabs">${tabs.map(t=>`<button class="chip ${TAB===t[0]?'on':''}" data-act="tab" data-v="${t[0]}">${t[1]}</button>`).join('')}</div>${adminBody()}</div></section>`}
+function adminBody(){
+ if(TAB==='dash'){const pend=D.complaints.filter(c=>c.status==='Pending').length;return `<div class="grid">${[['Announcements',D.ann.length],['Projects',D.proj.length],['Photos',D.gallery.length],['Pending complaints',pend]].map(k=>`<div class="card kpi"><b>${k[1]}</b>${k[0]}</div>`).join('')}</div><div class="card" style="margin-top:18px"><h3>Projects by status</h3>${['Completed','Ongoing','Upcoming'].map(s=>{const n=D.proj.filter(p=>p.status===s).length;return `<div class="muted">${s}: ${n}</div><div class="bar"><i style="width:${n/(D.proj.length||1)*100}%"></i></div>`}).join('')}</div>`}
+ if(TAB==='stats')return `<div class="card"><h3>Village statistics</h3><form id="sf">${Object.keys(D.stats).map(k=>`<label>${esc(k)}<input type="number" min="0" name="${esc(k)}" value="${+D.stats[k]}"></label>`).join('')}<p><button type="submit">Save statistics</button></p></form></div>`;
+ if(TAB==='content'){const c=D.content;return `<div class="card"><h3>Site content</h3><form id="kf">${[['name','Village name'],['welcome','Welcome headline'],['alert','Emergency alert (leave empty to hide)']].map(f=>`<label>${f[1]}<input name="${f[0]}" value="${esc(c[f[0]])}"></label>`).join('')}<label>Introduction<textarea name="intro" rows="4">${esc(c.intro)}</textarea></label><p><button type="submit">Save content</button></p></form></div>`}
+ if(TAB==='complaints')return `<div class="card scroll"><table><tr><th>Date</th><th>Ward</th><th>Category</th><th>Complaint</th><th>Status</th><th></th></tr>${D.complaints.map(c=>`<tr><td>${esc(c.date)}</td><td>${esc(c.ward)}</td><td>${esc(c.category)}</td><td>${esc(c.body)}<div class="muted">${esc(c.name)}</div></td><td><span class="tag ${esc(c.status)}">${esc(c.status)}</span></td><td><button class="sm" data-act="cs" data-id="${c.id}">${c.status==='Pending'?'Mark resolved':'Reopen'}</button>${SESS.role==='admin'?` <button class="sm danger" data-act="del" data-k="complaints" data-id="${c.id}">Delete</button>`:''}</td></tr>`).join('')||'<tr><td colspan="6" class="muted">No complaints yet.</td></tr>'}</table></div>`;
+ const S=SCHEMA[TAB];let h=`<p><button data-act="new">Add ${S.label.toLowerCase()}</button></p>`;
+ if(EDIT){const r=EDIT.id?D[TAB].find(x=>x.id===EDIT.id):S.tpl();h+=`<div class="card" style="margin-bottom:18px"><h3>${EDIT.id?'Edit':'Add'} entry</h3><form id="ef" novalidate>${S.f.map(f=>{const n=f[0],v=r[n]==null?'':r[n];let i=f[1]==='select'?`<select name="${n}">${f[2].map(o=>`<option ${o===v?'selected':''}>${o}</option>`).join('')}</select>`:f[1]==='textarea'?`<textarea name="${n}" rows="3">${esc(v)}</textarea>`:f[1]==='file'?`<input type="file" name="${n}" accept="image/*">`:`<input type="${f[1]}" name="${n}" value="${esc(v)}">`;return `<label>${n}${f[3]===undefined&&f[2]===1?' *':''}${i}<span class="err"></span></label>`}).join('')}<p><button type="submit">Save</button> <button type="button" class="ghost" data-act="cancel">Cancel</button></p></form></div>`}
+ h+=`<div class="card scroll"><table><tr>${S.cols.map(c=>`<th>${c}</th>`).join('')}<th></th></tr>${D[TAB].map(r=>`<tr>${S.cols.map(c=>`<td>${esc(r[c])}</td>`).join('')}<td><button class="sm" data-act="edit" data-id="${r.id}">Edit</button>${SESS.role==='admin'?` <button class="sm danger" data-act="del" data-k="${TAB}" data-id="${r.id}">Delete</button>`:''}</td></tr>`).join('')||`<tr><td class="muted">Nothing here yet. Add the first entry.</td></tr>`}</table></div>`;return h}
+/* RENDER */
+function render(){const p=page();$('#links').innerHTML=NAV.map(n=>`<a class="l ${p===n[0]?'on':''}" href="#${n[0]}">${n[1]}</a>`).join('')+`<a class="l ${p==='admin'?'on':''}" href="#admin">Admin</a>`;$('#links').classList.remove('open');
+ const al=D.content.alert;$('#alert').innerHTML=al?`<div class="alertbar" role="alert">Alert: ${esc(al)}</div>`:'';
+ $('#app').innerHTML=T[p]();document.title=(p==='home'?'':p[0].toUpperCase()+p.slice(1)+' · ')+D.content.name+' Digital Village Portal';tick();counters();bindForms()}
+function tick(){const e=$('#clock');if(e)e.textContent=new Date().toLocaleString('en-IN',{dateStyle:'full',timeStyle:'medium'})}
+setInterval(tick,1000);
+function counters(){const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;document.querySelectorAll('[data-n]').forEach(e=>{const t=+e.dataset.n;if(reduce){e.textContent=t.toLocaleString('en-IN');return}const t0=performance.now();(function f(n){const k=Math.min(1,(n-t0)/1200);e.textContent=Math.round(t*(1-Math.pow(1-k,3))).toLocaleString('en-IN');if(k<1)requestAnimationFrame(f)})(t0)})}
+function bindForms(){
+ const cf=$('#cf');if(cf)cf.onsubmit=e=>{e.preventDefault();const n=$('#cn').value.trim(),b=$('#cb').value.trim();$('#e1').textContent=n.length<2?'Enter your name.':'';$('#e2').textContent=b.length<10?'Describe the problem in at least 10 characters.':'';if(n.length<2||b.length<10)return;D.complaints.push({id:nid(D.complaints),name:n,ward:$('#cw').value,category:$('#cc').value,body:b,date:today(),status:'Pending'});save();cf.reset();toast('Complaint submitted. The Panchayat will review it.')};
+ const lf=$('#lf');if(lf)lf.onsubmit=e=>{e.preventDefault();const u=$('#lu').value.trim(),p=$('#lp').value,acc={admin:['admin123','admin'],editor:['editor123','editor']};if(acc[u]&&acc[u][0]===p){SESS={user:u,role:acc[u][1]};try{localStorage.setItem('dv_sess',JSON.stringify(SESS))}catch(x){}TAB='dash';render()}else $('#le').textContent='Username or password is incorrect.'};
+ const sf=$('#sf');if(sf)sf.onsubmit=e=>{e.preventDefault();new FormData(sf).forEach((v,k)=>D.stats[k]=Math.max(0,+v||0));save();toast('Statistics saved')};
+ const kf=$('#kf');if(kf)kf.onsubmit=e=>{e.preventDefault();new FormData(kf).forEach((v,k)=>D.content[k]=v);save();render();toast('Content saved')};
+ const ef=$('#ef');if(ef)ef.onsubmit=async e=>{e.preventDefault();const S=SCHEMA[TAB],fd=new FormData(ef),o=EDIT.id?D[TAB].find(x=>x.id===EDIT.id):Object.assign({id:nid(D[TAB])},S.tpl());let ok=true;ef.querySelectorAll('.err').forEach(x=>x.textContent='');for(const f of S.f){const v=fd.get(f[0]);if(f[1]==='file'){if(v&&v.size){if(v.size>400000){ef.querySelector(`[name=${f[0]}]`).nextElementSibling.textContent='Image must be under 400 KB.';ok=false;continue}o.img=await new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result);x.readAsDataURL(v)})}continue}if(f[2]===1&&!String(v).trim()){ef.querySelector(`[name=${f[0]}]`).nextElementSibling.textContent='This field is required.';ok=false}else o[f[0]]=f[1]==='number'?+v:v}if(!ok)return;if(!EDIT.id)D[TAB].push(o);save();EDIT=null;render();toast('Saved')}}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act,v=b.dataset.v;
+ if(a==='pf'||a==='nf'||a==='gf'){const box={pf:'#plist',nf:'#nlist',gf:'#glist'}[a],attr={pf:'s',nf:null,gf:'c'}[a];b.parentNode.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));if(a==='nf'){$(box).innerHTML=[...D.ann].filter(x=>v==='All'||x.type===v).sort((p,q)=>q.date.localeCompare(p.date)).map(annCard).join('')}else document.querySelectorAll(box+'>*').forEach(c=>c.style.display=v==='All'||c.dataset[attr]===v?'':'none')}
+ else if(a==='open'){const m=$('#modal');m.innerHTML=`<div class="lb" role="dialog" aria-modal="true" aria-label="${esc(b.dataset.t)}" data-act="close"><div>${b.outerHTML.replace('thumb','thumb" style="cursor:default;border-radius:14px')}<p><b>${esc(b.dataset.t)}</b> <button class="gold sm" data-act="close">Close</button></p></div></div>`;m.querySelector('button').focus()}
+ else if(a==='close'){if(e.target.closest('button')||e.target.classList.contains('lb'))$('#modal').innerHTML=''}
+ else if(a==='tab'){TAB=v;EDIT=null;render()}
+ else if(a==='new'){EDIT={};render()}
+ else if(a==='edit'){EDIT={id:+b.dataset.id};render()}
+ else if(a==='cancel'){EDIT=null;render()}
+ else if(a==='del'){if(SESS.role!=='admin')return;if(confirm('Delete this entry? This cannot be undone.')){D[b.dataset.k]=D[b.dataset.k].filter(x=>x.id!==+b.dataset.id);save();render();toast('Deleted')}}
+ else if(a==='cs'){const c=D.complaints.find(x=>x.id===+b.dataset.id);c.status=c.status==='Pending'?'Resolved':'Pending';save();render()}
+ else if(a==='out'){SESS=null;try{localStorage.removeItem('dv_sess')}catch(x){}render()}
+ else if(a==='reset'&&SESS.role==='admin'&&confirm('Replace all data with the original sample content?')){D=seed();save();render();toast('Sample data restored')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#modal').innerHTML=''});
+$('#menu').onclick=()=>$('#links').classList.toggle('open');
+$('#theme').onclick=()=>{const r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark'};
+addEventListener('hashchange',()=>{render();scrollTo(0,0)});
+render();
+</script>
+</body>
+</html>
